@@ -1,0 +1,37 @@
+{
+	"type": "package",
+	"handle": "law-gpt-api",
+	"version": "0.2.4",
+	"description": null,
+	"author": "manas",
+	"entrypoint": "Unused",
+	"public": true,
+	"plugin": null,
+	"build_config": {
+		"ignore": [
+			"tests",
+			"examples"
+		]
+	},
+	"configTemplate": {},
+	"steamshipRegistry": {
+		"tagline": "law GPT API comes live",
+		"tagline2": null,
+		"usefulFor": null,
+		"videoUrl": null,
+		"githubUrl": null,
+		"demoUrl": null,
+		"blogUrl": null,
+		"jupyterUrl": null,
+		"authorGithub": "",
+		"authorName": "doug",
+		"authorEmail": null,
+		"authorTwitter": null,
+		"authorUrl": null,
+		"tags": [
+			"Prompt API",
+			"LangChain",
+			"Self Ask With Search"
+		]
+	}
+}

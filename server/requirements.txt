@@ -1,0 +1,7 @@
+steamship-langchain
+steamship
+transformers 
+sentence-transformers
+pinecone-client
+spalde @ git+https://github.com/naver/splade.git@94f941da7cf96ffdbb57758ce0f5c676136024ca#egg=splade
+SPLADE @ git+https://github.com/naver/splade.git@94f941da7cf96ffdbb57758ce0f5c676136024ca
