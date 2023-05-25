@@ -1,4 +1,3 @@
-#Code to fetch data for any given year by - Dhruv Talan
 import requests
 from bs4 import BeautifulSoup
 import re
@@ -48,8 +47,8 @@ for Year in range(1950, 2024):
  i = 0
  for start_URL in Months_URL:
   urls = list(multi_page(start_URL))
+  i = i + 1;
   for URL in urls:
-   i = i + 1;
    Link_container = []
    numbers = []
    R = requests.get(URL)
