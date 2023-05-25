@@ -68,7 +68,12 @@ for Year in range(1950, 2024):
     soup = BeautifulSoup(HtmlContent, 'html.parser')
     page_div = soup.find("div", class_="judgments")
     tagline = page_div.find("div", class_="doc_title").text
-    ad_doc = page_div.find("div", class_="ad_doc")
-    ad_doc.decompose()
-    data.append({'id': no, 'date': f"{i}/{Year}", 'tagline': tagline})
-print(data)
+    try:
+     judgment = page_div.find("pre").text
+    except:
+     judgment = ""
+     p_tags = page_div.find_all("p")
+     for p_tag in p_tags:
+      judgment += p_tag.text
+    data.append({'id': no, 'date': f"{i}/{Year}", 'tagline': tagline, 'judgment': judgment})
+    print(data)
