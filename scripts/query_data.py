@@ -54,5 +54,3 @@ class vector_search:
             include_metadata=True
         )
         return xc
-
-print("hell")
