@@ -19,7 +19,7 @@ app = FastAPI()
 @app.put('/{prompt}')
 def get_answers(prompt:str):
     pinecone.init(
-        api_key="f112db94-1b02-44ec-b1d7-a4cf165fad28",
+        api_key="<YOUR_PINECONE_API_KEY>",
         environment="us-east1-gcp"
     )
     index = pinecone.Index("criminal-laws")
@@ -29,16 +29,13 @@ def get_answers(prompt:str):
 
     retriever = PineconeHybridSearchRetriever(embeddings=embeddings, sparse_encoder=splade_encoder, index=index)
 
-    os.environ["OPENAI_API_KEY"] = "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" #prarabdha
-    # os.environ["OPENAI_API_KEY"] = "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" #FF
-    # os.environ["OPENAI_API_KEY"] = "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" #Shanaya
+    os.environ["OPENAI_API_KEY"] = "<YOUR_OPEN_AI_KEY>"
     openai.api_key = os.getenv("OPENAI_API_KEY")
-    # openai.organization = "org-t1aqu8RsI7DEUCJTzEoBeOIg" #Shanaya
-    openai.organization = "org-AzxkHbslquofpvZHMHVgJn0V" #Prarabdha
+    openai.organization = "<YOUR_OPENAI_ENV_KEY>"
     llm = ChatOpenAI(temperature=0, model="gpt-3.5-turbo")
     dnd_qa = RetrievalQA.from_chain_type(llm=llm, chain_type="refine", retriever=retriever)
 
-    os.environ["SERPAPI_API_KEY"] = "b5e4eee837ecc4cb0336916bb63ccc8e6158510787b74dae09c01504eb045b4c"
+    os.environ["SERPAPI_API_KEY"] = "<YOUR_SERP_API_KEY>"
     search = SerpAPIWrapper()
     tools = [
         Tool(
