@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+langchain
+pinecone-client
+pinecone-text[splade]
+google-search-results
+openai
+urllib3==1.26.15
+nltk
+asyncio==3.4.3
+aiohttp==3.8.4
